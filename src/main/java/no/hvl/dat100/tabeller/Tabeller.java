@@ -10,16 +10,32 @@ public class Tabeller {
 			System.out.print(tabell[i]+" ");
 		}
 		System.out.print("]");
-
-
 	}
 
 	// b)
 	public static String tilStreng(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-	}
+		 if (tabell == null || tabell.length == 0) {
+	            return "[]";  // Returner tom array hvis tabellen er null eller tom
+	        }
+
+	        StringBuilder resultat = new StringBuilder();
+	        resultat.append("[");  // Start med åpningsklamme
+
+	        // Iterer gjennom elementene i tabellen og bygg strengen
+	        for (int i = 0; i < tabell.length; i++) {
+	            resultat.append(tabell[i]);
+	            if (i < tabell.length - 1) {
+	                resultat.append(",");  // Legg til komma mellom elementene
+	            }
+	        }
+
+	        resultat.append("]");  // Legg til avslutningsklamme
+	        return resultat.toString();  // Returner strengen
+	    }
+
+	    // Eventuelle andre metoder du trenger å implementere (f.eks. skrivUt, summer, finnesTall osv.)
+	
 
 	// c)
 	public static int summer(int[] tabell) {

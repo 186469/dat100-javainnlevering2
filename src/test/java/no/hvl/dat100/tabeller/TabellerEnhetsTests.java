@@ -35,7 +35,16 @@ class TabellerEnhetsTests {
 
 	@Test
 	void testtilStreng() {
+		
+		int[] tabell = {42, 67, 89};
+	    String forventet = "[42,67,89]";
 
+	    // Kall på metoden tilStreng fra Tabeller-klassen
+	    String resultat = Tabeller.tilStreng(tabell);
+
+	    // Test om resultatet stemmer med forventet verdi
+	    assertEquals(forventet, resultat);
+		
 		assertEquals("[1,4,6]", Tabeller.tilStreng(tabell1));
 		assertEquals("[1]", Tabeller.tilStreng(tabell2));
 		assertEquals("[]", Tabeller.tilStreng(tabell3));
