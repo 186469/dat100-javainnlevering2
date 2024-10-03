@@ -83,11 +83,11 @@ public class Tabeller {
 	    for (int i = 0; i < tabell.length - 1; i++) {
 	        if (tabell[i] > tabell[i + 1]) {
 	            System.out.println("(g) Tabellen er ikke sortert: False");
-	            return false;  // Returner false hvis et element er større enn det neste
+	            return false;  
 	        }
 	    }
 	    System.out.println("(g) Tabellen er sortert: True");
-	    return true;  // Returner true hvis ingen elementer var større enn det neste
+	    return true;  
 	}
 
 	// h)
