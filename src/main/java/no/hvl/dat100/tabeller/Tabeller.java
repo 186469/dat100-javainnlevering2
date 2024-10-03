@@ -14,46 +14,51 @@ public class Tabeller {
 	}
 
 	// b)
+
+
 	public static String tilStreng(int[] tabell) {
-
-		String tabellInhold = "";
-		for (int i = 0; i < tabell.length; i++) {
-			tabellInhold += tabell[i];
-			if (i < tabell.length - 1) {
-				tabellInhold += ", ";
-			}
-		}
-		System.out.println();
-		System.out.println("Oppgave (b)[" + tabellInhold + "]");
-		return null;
 		
-		}
+		if (tabell == null || tabell.length == 0) {
+			return "[]"; 
+		    	}
 
+		    String tabellInnhold = "["; 
+
+		    for (int i = 0; i < tabell.length; i++) {
+		        tabellInnhold += tabell[i]; 
+
+		        
+		        if (i < tabell.length - 1) {
+		            tabellInnhold += ",";
+		        }
+		    }
+
+		    tabellInnhold += "]";
+		    
+		    return tabellInnhold;
+		}
+	
 	// c)
 	public static int summer(int[] tabell) {
 
 		int sum = 0;
 		for (int i = 0; i < tabell.length; i++) {
 			sum += tabell[i];
+			
 		}
-		System.out.println("(c) Summen er: " + sum);
-		return 0;
-		
+		return sum;
 	}
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
 		for (int i = 0; i < tabell.length; i++) {
-	        if (tabell[i] == tall) {
-	        	System.out.println("True");
-	            return true;  
-	        }
-	    }
-		System.out.println("False");
-	    return false; 
+			if (tabell[i] == tall) {
+				return true;
+			}
+		}
+		return false;
 	}
-
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
 	    for (int i = 0; i < tabell.length; i++) {
@@ -63,16 +68,17 @@ public class Tabeller {
 	    }
 	    return -1;  
 	}
-
 	
 	// f)
 	public static int[] reverser(int[] tabell) {
+		
 	    int[] nyTabell = new int[tabell.length]; 
 	    
-	   System.out.print("Tabellen reversert er (f): ");
-	    for (int i = 0; i <= tabell.length; i++) {
+	    for (int i = 0; i < tabell.length; i++) {
 	        nyTabell[i] = tabell[tabell.length - 1 - i];
-	        System.out.print(nyTabell[i] + " ");
+	    }
+	    for (int i = 0; i < nyTabell.length; i++) {
+	    	
 	    }
 
 	    return nyTabell; 
@@ -93,31 +99,30 @@ public class Tabeller {
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 		System.out.println();
-	    // Finn lengden på de to tabellene
+	  
 	    int lengde1 = tabell1.length;
 	    int lengde2 = tabell2.length;
 
-	    // Opprett en ny tabell med lengden som er summen av de to tabellene
+	   
 	    int[] nyTabell = new int[lengde1 + lengde2];
 
-	    // Kopier elementene fra tabell1 inn i nyTabell
+	 
 	    for (int i = 0; i < lengde1; i++) {
 	        nyTabell[i] = tabell1[i];
 	    }
 
-	    // Kopier elementene fra tabell2 inn i nyTabell etter elementene fra tabell1
+	    
 	    for (int i = 0; i < lengde2; i++) {
 	        nyTabell[lengde1 + i] = tabell2[i];
 	    }
 
-	    // Skriv ut den sammenslåtte tabellen til konsollen
+	   
 	    System.out.print("(h) Sammensatt tabell: ");
 	    for (int tall : nyTabell) {
 	        System.out.print(tall + " ");
 	    }
-	    System.out.println();  // Flytt til ny linje etter utskrift
-
-	    return nyTabell;  // Returner den nye sammenslåtte tabellen
+	    System.out.println(); 
+	    return nyTabell; 
 	}
 
 }
